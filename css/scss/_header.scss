@@ -1,0 +1,69 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 136px;
+  padding-top: 5px;
+  
+  @media screen and (max-width: 600px) {
+    padding-left: 0;
+    padding-right: 0;
+    //Phone
+  }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    padding-left: 0;
+  padding-right: 0;
+    //Phone
+  }
+    .header__logo {
+    // min-width: 100%;
+    height: 100% !important;
+  
+    }
+    .nav {
+      padding-top: 40px;
+      @media screen and (max-width: 600px) {
+        padding-top: 15px;
+        //Phone
+      }
+      @media screen and (min-width: 601px) and (max-width: 1024px) {
+      //Tablet
+      padding-top: 20px;
+      }
+      .nav__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 153px;
+        row-gap: 15px;
+        @media screen and (max-width: 600px) {
+          gap: 40px;
+          row-gap: 8px;
+          //Phone
+        }
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+        //Tablet
+        gap: 70px;
+        row-gap: 11px;
+        }
+        .nav__item {
+          margin: 0;
+          padding: 0;
+          .nav__link {
+            font-size: 20px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            @media screen and (max-width: 600px) {
+              font-size: 13px;
+              //Phone
+            }
+            @media screen and (min-width: 601px) and (max-width: 1024px) {
+            //Tablet
+            font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
