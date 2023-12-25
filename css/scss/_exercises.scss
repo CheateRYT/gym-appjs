@@ -1,0 +1,61 @@
+.exercises {
+  .exercises__title {
+    margin: 0;
+    margin-left: 5px;
+    padding: 0;
+    margin-bottom: 44px;
+    color: #000;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+  .muscle-groups {
+    display: flex;
+    flex-direction: column;
+
+    .muscle-group {
+      display: flex;
+      margin-bottom: 51px;
+      .muscle-group__title {
+        padding-right: 45px;
+        color: #000;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      .muscle-group__selector {
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        width: 100%;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: url(../../images/arrow.png) no-repeat right center;
+      }
+      .muscle-group__selector option {
+        color: #000;
+        text-align: center;
+        font-family: Passion One;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        @media screen and (max-width: 600px) {
+          font-size: 8px;
+          //Phone
+        }
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+        //Tablet
+        font-size: 15px;
+        }
+      }
+      
+    }
+  }
+}
