@@ -23,8 +23,12 @@ $('.muscle-groups').on('change', '.muscle-group__selector', function(event) {
   let selectedExerciseText =  $(this).find('option:selected').text();
   const $exercisesTitle =  $('.exercises__title');
   $exercisesTitle.text(selectedExerciseText);
-});
 
+  $('.muscle-group').hide();
+
+  // показать выбранный selector
+  //$(this).closest('.muscle-group').show();
+});
 
 
 
