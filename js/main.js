@@ -26,9 +26,9 @@ $('.muscle-groups').on('change', '.muscle-group__selector', function(event) {
   const selectedExerciseValue = $(this).val();
   const selectedExercise = muscleGroupData[$(this).closest('.muscle-group').find('.muscle-group__title').text()].find(exercise => exercise.value === selectedExerciseValue);
 
-  const $exerciseDescription = $('<h3>').addClass('exercise__description').text(selectedExercise.descr);
-  const $exerciseImageFirst = $('<img>').addClass('exercise__image').attr('src', selectedExercise.image[0]);
-  const $exerciseImageSecond = $('<img>').addClass('exercise__image').attr('src', selectedExercise.image[1]);
+  const $exerciseDescription = $('<h3>').addClass('exercises__description').text(selectedExercise.descr);
+  const $exerciseImageFirst = $('<img>').addClass('exercises__image').attr('src', selectedExercise.image[0]);
+  const $exerciseImageSecond = $('<img>').addClass('exercises__image').attr('src', selectedExercise.image[1]);
   
   $('.muscle-group').hide();
   $('.exercises').append($exerciseDescription, $exerciseImageFirst,$exerciseImageSecond);

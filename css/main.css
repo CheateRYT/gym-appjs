@@ -274,6 +274,14 @@ header .nav .nav__list .nav__item .nav__link {
   }
 }
 
+.exercises .exercises__description {
+  margin-bottom: 90px;
+  line-height: 50px;
+}
+.exercises .exercises__image {
+  width: 50%;
+  height: 50%;
+}
 .exercises .exercises__title {
   margin: 0;
   margin-left: 5px;
