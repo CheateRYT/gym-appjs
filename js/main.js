@@ -13,14 +13,17 @@ $(document).ready(function() {
       const $optionExercise = $('<option>').val(option.value).text(option.text);
       $muscleGroupSelector.append($optionExercise);
     }
-
     $selectorMuscleWrapper.append($muscleGroupTitle, $muscleGroupSelector);
     $muscleContainer.append($selectorMuscleWrapper);
   }
 });
 
-
-
+//Выбор title взависимости от выбранного option
+$('.muscle-groups').on('change', '.muscle-group__selector', function(event) {
+  let selectedExerciseText =  $(this).find('option:selected').text();
+  const $exercisesTitle =  $('.exercises__title');
+  $exercisesTitle.text(selectedExerciseText);
+});
 
 
 
