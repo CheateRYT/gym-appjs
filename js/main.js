@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   for (const selector in muscleGroupData) {
     const $muscleContainer = $('.muscle-groups');
     const $selectorMuscleWrapper = $('<div>').addClass('muscle-group');
@@ -13,6 +12,7 @@ $(document).ready(function() {
       const $optionExercise = $('<option>').val(option.value).text(option.text);
       $muscleGroupSelector.append($optionExercise);
     }
+
     $selectorMuscleWrapper.append($muscleGroupTitle, $muscleGroupSelector);
     $muscleContainer.append($selectorMuscleWrapper);
   }
@@ -24,12 +24,16 @@ $('.muscle-groups').on('change', '.muscle-group__selector', function(event) {
   const $exercisesTitle =  $('.exercises__title');
   $exercisesTitle.text(selectedExerciseText);
 
-  $('.muscle-group').hide();
+  const selectedExerciseValue = $(this).val();
+  const selectedExercise = muscleGroupData[$(this).closest('.muscle-group').find('.muscle-group__title').text()].find(exercise => exercise.value === selectedExerciseValue);
 
-  // показать выбранный selector
+  const $exerciseDescription = $('<h3>').addClass('exercise__description').text(selectedExercise.descr);
+  const $exerciseImage = $('<img>').addClass('exercise__image').attr('src', selectedExercise.image);
+  $('.muscle-group').hide();
+  $('.exercises').append($exerciseDescription, $exerciseImage);
+
   //$(this).closest('.muscle-group').show();
 });
-
 
 
 const muscleGroupData = {
@@ -252,7 +256,7 @@ const muscleGroupData = {
       text:"Передний мост для шеи",
       image: [[], []],
       descr:
-        "Передний мост для шеи является изолирующим упражнением для развитияшеи. Для выполнения этого упражнения, станьте на четвереньки, опустите локти на пол и положите подбородок на ладони. Напрягите шею и поднимите голову вверх, затем медленно опустите ее вниз. Это упражнение активирует шею и шею. Рекомендуется выполнять передний мост для шеи на конце тренировки шеи и шеи.",
+        "Передний мост для шеи является изолирующим упражнением для развития шеи. Для выполнения этого упражнения, станьте на четвереньки, опустите локти на пол и положите подбородок на ладони. Напрягите шею и поднимите голову вверх, затем медленно опустите ее вниз. Это упражнение активирует шею и шею. Рекомендуется выполнять передний мост для шеи на конце тренировки шеи и шеи.",
     },
   ],
 };
