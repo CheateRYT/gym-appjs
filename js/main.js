@@ -26,12 +26,27 @@ $('.muscle-groups').on('change', '.muscle-group__selector', function(event) {
   const selectedExerciseValue = $(this).val();
   const selectedExercise = muscleGroupData[$(this).closest('.muscle-group').find('.muscle-group__title').text()].find(exercise => exercise.value === selectedExerciseValue);
 
+  const $exerciseWrap = $('<div>').addClass('exercise-wrap')
+
+  const $exerciseGoBack = $('<button>').addClass('exercises__back').text('Вернуться');
+  $exerciseGoBack.click(function() {
+    $('.muscle-group').show();
+    $exerciseWrap.empty();
+    $exercisesTitle.text("Упражнения");
+   $(".muscle-group__selector").val(0)
+  })
+
+
+
+  const $exerciseImageWrap = $('<div>').addClass('image-wrap')
   const $exerciseDescription = $('<h3>').addClass('exercises__description').text(selectedExercise.descr);
   const $exerciseImageFirst = $('<img>').addClass('exercises__image').attr('src', selectedExercise.image[0]);
   const $exerciseImageSecond = $('<img>').addClass('exercises__image').attr('src', selectedExercise.image[1]);
   
   $('.muscle-group').hide();
-  $('.exercises').append($exerciseDescription, $exerciseImageFirst,$exerciseImageSecond);
+  $exerciseImageWrap.append($exerciseImageFirst,$exerciseImageSecond)
+  $exerciseWrap.append($exerciseDescription, $exerciseGoBack, $exerciseImageWrap);
+  $('.exercises').append($exerciseWrap);
 
   //$(this).closest('.muscle-group').show();
 });

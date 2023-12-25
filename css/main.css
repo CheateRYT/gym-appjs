@@ -274,11 +274,22 @@ header .nav .nav__list .nav__item .nav__link {
   }
 }
 
-.exercises .exercises__description {
-  margin-bottom: 90px;
+.exercises .exercise-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.exercises .exercise-wrap .exercises__description {
   line-height: 50px;
 }
-.exercises .exercises__image {
+.exercises .exercise-wrap .exercises__image {
   width: 50%;
   height: 50%;
 }
@@ -349,6 +360,68 @@ header .nav .nav__list .nav__item .nav__link {
   .exercises .muscle-groups .muscle-group .muscle-group__selector option {
     font-size: 15px;
   }
+}
+
+button {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#E6E6E6)) #F5F5F5 repeat-x;
+  background: linear-gradient(to bottom, #FFFFFF, #E6E6E6) #F5F5F5 repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #333333;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  width: 120px;
+  line-height: 20px;
+  margin: 20px auto;
+  padding: 4px 12px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+button:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform, opacity;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+}
+button:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+button:hover::before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
 }
 
 *, *:after, *:before {
