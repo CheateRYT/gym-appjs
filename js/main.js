@@ -18,7 +18,6 @@ $(document).ready(function() {
   }
 });
 
-//Выбор title взависимости от выбранного option
 $('.muscle-groups').on('change', '.muscle-group__selector', function(event) {
   let selectedExerciseText =  $(this).find('option:selected').text();
   const $exercisesTitle =  $('.exercises__title');
@@ -28,9 +27,11 @@ $('.muscle-groups').on('change', '.muscle-group__selector', function(event) {
   const selectedExercise = muscleGroupData[$(this).closest('.muscle-group').find('.muscle-group__title').text()].find(exercise => exercise.value === selectedExerciseValue);
 
   const $exerciseDescription = $('<h3>').addClass('exercise__description').text(selectedExercise.descr);
-  const $exerciseImage = $('<img>').addClass('exercise__image').attr('src', selectedExercise.image);
+  const $exerciseImageFirst = $('<img>').addClass('exercise__image').attr('src', selectedExercise.image[0]);
+  const $exerciseImageSecond = $('<img>').addClass('exercise__image').attr('src', selectedExercise.image[1]);
+  
   $('.muscle-group').hide();
-  $('.exercises').append($exerciseDescription, $exerciseImage);
+  $('.exercises').append($exerciseDescription, $exerciseImageFirst,$exerciseImageSecond);
 
   //$(this).closest('.muscle-group').show();
 });
@@ -41,7 +42,7 @@ const muscleGroupData = {
     {
       value: '1',
       text: "Жим штанги от груди широким хватом",
-      image: [[], []],
+      image: ["/images/muscleGroups/chest/chest1 1.jpeg","/images/muscleGroups/chest/chest1 2.png"],
       descr:
         "Жим штанги от груди широким хватом является базовым упражнением для развития грудных мышц. Для выполнения этого упражнения, лягте на скамью и возьмитесь за штангу широким хватом. Плавно опустите штангу к груди, затем верните ее в исходное положение, выпрямляя руки. Это упражнение активирует грудные мышцы, а также включает в работу плечевые и трехглавую мышцы плеча. Рекомендуется выполнять жим штанги от груди широким хватом в начале тренировки груди.",
     },
